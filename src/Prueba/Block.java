@@ -75,7 +75,8 @@ public class Block extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenu_Abrir = new javax.swing.JMenuItem();
         jMenu_Guardar = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
@@ -115,10 +116,19 @@ public class Block extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Button-Close-icon.png"))); // NOI18N
-        jMenu3.setText("Eliminar");
-        jMenu3.setFont(new java.awt.Font("Nirmala UI", 0, 14)); // NOI18N
-        jMenuBar1.add(jMenu3);
+        jMenu2.setText("Edición");
+        jMenu2.setFont(new java.awt.Font("Nirmala UI", 0, 14)); // NOI18N
+
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Button-Close-icon.png"))); // NOI18N
+        jMenuItem1.setText("Eliminar");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem1);
+
+        jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
 
@@ -156,6 +166,10 @@ public class Block extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_jMenu_GuardarActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+     area.setText(null);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -195,8 +209,9 @@ public class Block extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea area;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenu_Abrir;
     private javax.swing.JMenuItem jMenu_Guardar;
     private javax.swing.JScrollPane jScrollPane1;
