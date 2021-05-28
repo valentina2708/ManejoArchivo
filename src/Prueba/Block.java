@@ -75,19 +75,26 @@ public class Block extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenu_Abrir = new javax.swing.JMenuItem();
         jMenu_Guardar = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
 
         area.setColumns(20);
         area.setRows(5);
+        area.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 2));
         jScrollPane1.setViewportView(area);
 
         getContentPane().add(jScrollPane1);
 
-        jMenu1.setText("Archivo");
+        jMenuBar1.setBackground(new java.awt.Color(153, 0, 0));
 
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/archive-icon.png"))); // NOI18N
+        jMenu1.setText("Archivo");
+        jMenu1.setFont(new java.awt.Font("Nirmala UI", 0, 14)); // NOI18N
+
+        jMenu_Abrir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenu_Abrir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/open-file-icon.png"))); // NOI18N
         jMenu_Abrir.setText("Abrir");
         jMenu_Abrir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,6 +103,8 @@ public class Block extends javax.swing.JFrame {
         });
         jMenu1.add(jMenu_Abrir);
 
+        jMenu_Guardar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenu_Guardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Save-icon.png"))); // NOI18N
         jMenu_Guardar.setText("Guardar");
         jMenu_Guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,8 +115,10 @@ public class Block extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Button-Close-icon.png"))); // NOI18N
+        jMenu3.setText("Eliminar");
+        jMenu3.setFont(new java.awt.Font("Nirmala UI", 0, 14)); // NOI18N
+        jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
 
@@ -184,7 +195,7 @@ public class Block extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea area;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenu_Abrir;
     private javax.swing.JMenuItem jMenu_Guardar;
