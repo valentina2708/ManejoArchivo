@@ -22,15 +22,13 @@ import javax.swing.JOptionPane;
  */
 public class Block extends javax.swing.JFrame {
 
-  
-
     public Block() {
         initComponents();
     }
 
     private String abrirArchivo() {
-       String lineaTexto = "";
-       String texto = "";
+        String lineaTexto = "";
+        String texto = "";
         try {
 
             JFileChooser file = new JFileChooser();
@@ -42,14 +40,14 @@ public class Block extends javax.swing.JFrame {
              * texto
              */
             if (abrir != null) {
-                FileReader archivos=new FileReader(abrir);
+                FileReader archivos = new FileReader(abrir);
                 BufferedReader lee = new BufferedReader(archivos);
 
                 while ((lineaTexto = lee.readLine()) != null) {
-                
-                    
-                   // texto += lineaTexto + "\n";
-                     System.out.println("" + lineaTexto);
+                    area.append("\n" + lineaTexto);
+
+                    // texto += lineaTexto + "\n";
+                    // System.out.println("" + lineaTexto);
                 }
 
                 lee.close();
@@ -75,7 +73,7 @@ public class Block extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenu_Abrir = new javax.swing.JMenuItem();
         jMenu_Guardar = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        jM_limpiar_ = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -116,8 +114,8 @@ public class Block extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edición");
-        jMenu2.setFont(new java.awt.Font("Nirmala UI", 0, 14)); // NOI18N
+        jM_limpiar_.setText("Edición");
+        jM_limpiar_.setFont(new java.awt.Font("Nirmala UI", 0, 14)); // NOI18N
 
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Button-Close-icon.png"))); // NOI18N
         jMenuItem1.setText("Eliminar");
@@ -126,9 +124,9 @@ public class Block extends javax.swing.JFrame {
                 jMenuItem1ActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem1);
+        jM_limpiar_.add(jMenuItem1);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(jM_limpiar_);
 
         setJMenuBar(jMenuBar1);
 
@@ -152,7 +150,7 @@ public class Block extends javax.swing.JFrame {
             if (guarda != null) {
                 /*guardamos el archivo y le damos el formato directamente,
     * si queremos que se guarde en formato doc lo definimos como .doc*/
-                FileWriter guardar= new FileWriter(guarda + ".doc");
+                FileWriter guardar = new FileWriter(guarda + ".doc");
                 guardar.write(area.getText());
                 guardar.close();
                 JOptionPane.showMessageDialog(null,
@@ -168,7 +166,7 @@ public class Block extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu_GuardarActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-     area.setText(null);
+        area.setText(null);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
@@ -208,8 +206,8 @@ public class Block extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea area;
+    private javax.swing.JMenu jM_limpiar_;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenu_Abrir;
